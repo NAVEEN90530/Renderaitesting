@@ -1,8 +1,10 @@
 
-#!/bin/sh
+#!/bin/bash
 set -eu
 
 export OLLAMA_HOST="0.0.0.0:${PORT:-10000}"
+export OLLAMA_ORIGINS="*"
+export OLLAMA_KEEP_ALIVE=0
 
 ollama serve &
 PID=$!
