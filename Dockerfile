@@ -1,9 +1,9 @@
 
 FROM ollama/ollama:latest
 
-ENV OLLAMA_HOST=0.0.0.0:10000
-ENV OLLAMA_KEEP_ALIVE=0
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 10000
 
-CMD ["serve"]
+ENTRYPOINT ["/bin/bash", "/start.sh"]
