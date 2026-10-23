@@ -5,6 +5,9 @@ set -eu
 export OLLAMA_HOST="0.0.0.0:${PORT:-10000}"
 export OLLAMA_ORIGINS="*"
 export OLLAMA_KEEP_ALIVE=0
+export OLLAMA_MAX_LOADED_MODELS=1
+export OLLAMA_NUM_PARALLEL=1
+export OLLAMA_CONTEXT_LENGTH=512
 
 ollama serve &
 PID=$!
